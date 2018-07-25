@@ -15,6 +15,7 @@ RUN apt update && \
     libssl1.0-dev \
     libtool \
     make \
+    wget \
     pkg-config \
     python3 \
     python3-jinja2 && \
