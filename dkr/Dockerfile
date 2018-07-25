@@ -3,7 +3,8 @@
 # docker run -p 0.0.0.0:2001:2001 -v $PWD/data:/steem -d -t steem
 
 FROM ubuntu:18.04
-RUN apt install -y \
+RUN apt update && \
+    apt install -y \
     autoconf \
     automake \
     cmake \
