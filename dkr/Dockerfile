@@ -3,24 +3,14 @@
 # docker run -p 0.0.0.0:2001:2001 -v $PWD/data:/steem -d -t steem
 
 FROM ubuntu:18.04
-RUN apt update && \
-    apt install -y \
-    autoconf \
-    automake \
-    cmake \
-    gcc-5 \
-    g++-5 \
-    libbz2-dev \
-    libsnappy-dev \
-    libssl1.0-dev \
-    libtool \
-    make \
-    wget \
-    pkg-config \
-    python3 \
-    python3-jinja2 && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN apt-get update && \
+	apt-get install -y gcc-5 g++-5 cmake make libbz2-dev libdb++-dev libdb-dev && \
+	apt-get install -y libssl-dev libssl1.0-dev libreadline-dev autoconf libtool git gdb liblz4-tool wget jq virtualenv libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev && \
+	apt-get install -y autotools-dev build-essential libbz2-dev libicu-dev python-dev wget doxygen python3 python3-dev python3-pip libboost-all-dev curl && \
+        apt-get install -y pkg-config python3 python3-jinja2 && \
+    	apt-get clean && \
+    	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
 RUN apt remove -y gcc g++ && \
 	ln -s /usr/bin/gcc-5 /usr/bin/gcc && \
