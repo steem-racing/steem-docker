@@ -6,7 +6,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update && \
 	apt-get install -y gcc-5 g++-5 cmake make libbz2-dev libdb++-dev libdb-dev && \
-	apt-get install -y libssl-dev libssl1.0-dev libreadline-dev autoconf libtool git gdb liblz4-tool wget jq virtualenv libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev && \
+	apt-get install -y libssl1.0-dev libreadline-dev autoconf libtool git gdb liblz4-tool wget jq virtualenv libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev && \
 	apt-get install -y autotools-dev build-essential libbz2-dev libicu-dev python-dev wget doxygen python3 python3-dev python3-pip libboost-all-dev curl && \
         apt-get install -y pkg-config python3 python3-jinja2 && \
     	apt-get clean && \
